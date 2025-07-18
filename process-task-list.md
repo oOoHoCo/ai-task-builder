@@ -46,13 +46,12 @@ Guidelines for managing task lists in markdown files to track progress on comple
 5. Before starting work, check which sub‑task is next.
 6. After implementing a sub‑task, update the file and then pause for user approval.
 
-## 🏗️ GOOGLE-LEVEL ENGINEERING STANDARDS
+## 🏗️ ENGINEERING STANDARDS
 
 **Code Quality Requirements:**
 1. **No Hardcoded Values**
    - ❌ NEVER hardcode IPs, ports, timeouts
    - ✅ Use configuration files, environment variables, or constants
-   - ✅ Support multi-market themes without code changes
 
 2. **Externalized Text**
    - ❌ NEVER hardcode user-facing messages in code
@@ -77,11 +76,6 @@ Guidelines for managing task lists in markdown files to track progress on comple
    - ✅ Graceful degradation patterns
    - ✅ Circuit breakers for external services
 
-6. **Multi-Market Architecture**
-   - ✅ Market-agnostic core logic
-   - ✅ Pluggable market configurations
-   - ✅ Timezone-aware operations
-   - ✅ Currency and locale support
 
 **Implementation Checklist:**
 - [ ] Remove ALL hardcoded values
@@ -93,4 +87,3 @@ Guidelines for managing task lists in markdown files to track progress on comple
 - [ ] Add proper logging
 - [ ] Implement error handling
 - [ ] Add performance metrics
-- [ ] Verify multi-market support
