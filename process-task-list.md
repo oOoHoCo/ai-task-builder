@@ -33,9 +33,9 @@ Guidelines for managing task lists in markdown files to track progress on comple
    - List every file created or modified.
    - Give each file a one‑line description of its purpose.
 
-## AI Instructions
+# AI Instructions
 
-When working with task lists, the AI must:
+## When working with task lists, the AI must:
 
 1. Regularly update the task list file after finishing any significant work.
 2. Follow the completion protocol:
@@ -45,3 +45,52 @@ When working with task lists, the AI must:
 4. Keep "Relevant Files" accurate and up to date.
 5. Before starting work, check which sub‑task is next.
 6. After implementing a sub‑task, update the file and then pause for user approval.
+
+## 🏗️ GOOGLE-LEVEL ENGINEERING STANDARDS
+
+**Code Quality Requirements:**
+1. **No Hardcoded Values**
+   - ❌ NEVER hardcode IPs, ports, timeouts
+   - ✅ Use configuration files, environment variables, or constants
+   - ✅ Support multi-market themes without code changes
+
+2. **Externalized Text**
+   - ❌ NEVER hardcode user-facing messages in code
+   - ✅ Use message catalogs or constants files
+   - ✅ Support internationalization (i18n) ready structure
+
+3. **Consistent Response Format**
+   - ✅ Always use success/error response wrappers
+   - ✅ Standardized error codes and messages
+   - ✅ Consistent API response structure
+
+4. **Comprehensive Testing**
+   - ✅ Unit tests for ALL business logic (minimum 80% coverage)
+   - ✅ Integration tests for API endpoints
+   - ✅ Performance tests for critical paths
+   - ✅ Security tests for authentication/authorization
+
+5. **Production-Ready Code**
+   - ✅ Proper error handling and recovery
+   - ✅ Structured logging with correlation IDs
+   - ✅ Metrics and monitoring hooks
+   - ✅ Graceful degradation patterns
+   - ✅ Circuit breakers for external services
+
+6. **Multi-Market Architecture**
+   - ✅ Market-agnostic core logic
+   - ✅ Pluggable market configurations
+   - ✅ Timezone-aware operations
+   - ✅ Currency and locale support
+
+**Implementation Checklist:**
+- [ ] Remove ALL hardcoded values
+- [ ] Create configuration classes/files
+- [ ] Implement response wrappers
+- [ ] Add comprehensive unit tests
+- [ ] Add integration tests
+- [ ] Externalize all messages
+- [ ] Add proper logging
+- [ ] Implement error handling
+- [ ] Add performance metrics
+- [ ] Verify multi-market support

@@ -128,25 +128,25 @@ Cursor users can follow the workflow described above, using the `.md` files dire
 
 To use these tools with Claude Code:
 
-1. **Copy files to your repo**: Copy the three `.md` files to a subdirectory in your project (e.g., `/ai-dev-tasks`)
+1. **Copy files to your repo**: Copy the three `.md` files to a subdirectory in your project (e.g., `/ai-task-builder`)
 
 2. **Reference in CLAUDE.md**: Add these lines to your project's `./CLAUDE.md` file:
    ```
    # AI Dev Tasks
    Use these files when I request structured feature development using PRDs:
-   /ai-dev-tasks/create-prd.md
-   /ai-dev-tasks/generate-tasks.md
-   /ai-dev-tasks/process-task-list.md
+   /ai-task-builder/create-prd.md
+   /ai-task-builder/generate-tasks.md
+   /ai-task-builder/process-task-list.md
    ```
 
 3. **Create custom commands** (optional): For easier access, create these files in `.claude/commands/`:
    - `.claude/commands/create-prd.md` with content:
      ```
-     Please use the structured workflow in /ai-dev-tasks/create-prd.md to help me create a PRD for a new feature.
+     Please use the structured workflow in /ai-task-builder/create-prd.md to help me create a PRD for a new feature.
      ```
    - `.claude/commands/generate-tasks.md` with content:
      ```
-     Please generate tasks from the PRD using /ai-dev-tasks/generate-tasks.md
+     Please generate tasks from the PRD using /ai-task-builder/generate-tasks.md
      If not explicitly told which PRD to use, generate a list of PRDs and ask the user to select one under `/tasks` or create a new one using `create-prd.md`:
      - assume it's stored under `/tasks` and has a filename starting with `prd-` (e.g., `prd-[name].md`)
      - it should not already have a corresponding task list in `/tasks` (e.g., `tasks-prd-[name].md`)
@@ -155,7 +155,7 @@ To use these tools with Claude Code:
      ```
    - `.claude/commands/process-task-list.md` with content:
      ```
-     Please process the task list using /ai-dev-tasks/process-task-list.md
+     Please process the task list using /ai-task-builder/process-task-list.md
      ```
 
    Make sure to restart Claude Code after adding these files (`/exit`).
