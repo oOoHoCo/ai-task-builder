@@ -1,3 +1,3 @@
-Please process the task list using /ai-task-builder/process-task-list.md
+Please process the task list using /.claude/commands/process-task-list.md
 
 
