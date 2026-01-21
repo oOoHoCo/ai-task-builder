@@ -29,7 +29,8 @@ To guide an AI assistant in creating a well-formed, conventional commit message 
    ```
    Question: Ready to commit?
    Options:
-   - "Commit as written" - Create the commit with the drafted message
+   - "Commit as written" (Recommended) - Create the commit with the drafted message
+   - "Commit and push" - Create the commit and push changes to remote
    - "Edit message" - Modify the commit message before committing
    - "Cancel" - Abort the commit
    ```
@@ -38,7 +39,15 @@ To guide an AI assistant in creating a well-formed, conventional commit message 
    - `git add .` to stage all changes
    - `git commit` with the approved message using `-m` flags for multi-line messages
 
-6. **Verify:** Run `git status` after committing to confirm success.
+6. **Verify and Follow-up:** Run `git status` after committing to confirm success, then:
+   - If user selected "Commit and push": Use the `/push` workflow to push changes
+   - Otherwise: Ask if they want to push now using AskUserQuestion:
+     ```
+     Question: Commit created successfully. Push changes?
+     Options:
+     - "Yes, push now" - Push to remote repository
+     - "No, I'll push later" - Keep changes local only
+     ```
 
 ## Commit Message Format
 
@@ -105,8 +114,23 @@ Related to tasks-teamlead-employee-overview-dashboards.md
 ┌─────────────────────────────────────────┐
 │ Ready to commit?                         │
 ├─────────────────────────────────────────┤
-│ ○ Commit as written                     │
+│ ● Commit as written (Recommended)        │
+│ ○ Commit and push                       │
 │ ○ Edit message                          │
 │ ○ Cancel                                │
+└─────────────────────────────────────────┘
+
+User: "Commit as written"
+
+AI: [Executes git commit]
+
+Commit created: feat: add project label filtering to dashboard
+
+[Uses AskUserQuestion]
+┌─────────────────────────────────────────┐
+│ Commit created successfully. Push?       │
+├─────────────────────────────────────────┤
+│ ○ Yes, push now                         │
+│ ○ No, I'll push later                   │
 └─────────────────────────────────────────┘
 ```
