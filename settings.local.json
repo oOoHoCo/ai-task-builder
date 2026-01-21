@@ -1,7 +1,25 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git checkout:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(sqlite3:*)",
+      "Bash(uv run python:*)",
+      "Bash(python3:*)",
+      "Bash(uv run alembic:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv sync:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(uvx ruff check:*)",
+      "Bash(tea pr list:*)",
+      "Bash(tea pr create --title \"feat: Project Explorer, Employee Tags Sync, and Unified Assignment Modal\" --body \"$\\(cat <<''EOF''\n## Summary\n\nThis PR introduces three major features developed through PRD-driven development:\n\n### 1. Employee Tags Sync \\(December 2025\\)\n- Syncs employee tags/categories from Odoo `hr.employee.category`\n- Many-to-many relationship with employees via `employee_tag_associations` table\n- Full audit logging for tag operations\n- REST API endpoints: `GET /api/tags/`, `GET /api/employees/{id}/tags`\n- Tags displayed as badges on employee detail page\n\n### 2. Project Explorer \\(December 2025\\)\n- New \"Reports\" section with advanced project analysis\n- Multi-dimensional filtering \\(customer, tags, date range, name search\\)\n- Timesheet analysis with Month/Quarter/Year views and Chart.js visualizations\n- New `project_analyst` role for access control\n- On-demand Odoo data fetching with 5-minute caching\n\n### 3. Unified Assignment Modal \\(January 2025\\)\n- Single modal for all assignment creation scenarios\n- Support for both regular projects and meta-projects\n- Date range selection with weekday filtering\n- Rotation pattern application with conflict preview\n- Bulk assignment creation\n\n## Key Changes\n- 61 files changed, ~12,700 lines added\n- New database migrations for tags and project_analyst role\n- Comprehensive test coverage \\(25+ tests for project explorer service\\)\n- Updated CLAUDE.md documentation\n\n## Test Plan\n- [ ] Run `uv run pytest tests/test_employee_tags.py -v`\n- [ ] Run `uv run pytest tests/test_project_explorer_service.py -v`\n- [ ] Test employee tags display on employee detail page\n- [ ] Test project explorer at `/reports/project-explorer`\n- [ ] Test unified assignment modal from dashboard\n- [ ] Verify role-based access for project_analyst features\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\nEOF\n\\)\" --base main --head feature/project-explorer)",
+      "Bash(tea pr create:*)",
+      "Bash(git push:*)",
+      "Bash(chmod:*)",
+      "Skill(process-task-list)"
     ],
     "deny": [],
     "ask": []
